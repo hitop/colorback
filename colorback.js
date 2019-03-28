@@ -1,7 +1,8 @@
 function colorback () {
 	// 模拟tapet 生成随机色块背景
-	var dw=document.body.clientWidth;
-	var scss=".backcolor{display:block;height:" + dw + "px;position:absolute;z-index:-888;box-shadow:5px 5px 10px rgba(80,80,80,0.6);overflow: hidden;}"
+	var dw = document.body.clientWidth;
+	var dh = window.innerHeight;
+	var scss=".backcolor{display:block;height:" + dh + "px;position:absolute;z-index:-888;box-shadow:5px 5px 10px rgba(80,80,80,0.6);overflow: hidden;}"
 	add_css(scss);
 
 	adddivbyid("ba1");
@@ -19,25 +20,25 @@ function colorback () {
 	ba3.setAttribute("class","backcolor");
 	ba4.setAttribute("class","backcolor");
 
-	var ba1width = Math.floor(Math.random()*300+100);
-	var ba2width = Math.floor(Math.random()*300+100);
-	var ba3width = Math.floor(Math.random()*300+100);
-	var ba4width = Math.floor(Math.random()*300+100);
+	var ba1width = Math.floor(Math.random()*100 + dw/5);
+	var ba2width = Math.floor(Math.random()*100 + dw/5);
+	var ba3width = Math.floor(Math.random()*100 + dw/5);
+	var ba4width = Math.floor(Math.random()*100 + dw/5);
 
 	ba2.style.width=ba2width + "px";
 	ba1.style.width=ba1width + "px";
 	ba3.style.width=ba3width + "px";
 	ba4.style.width=ba4width + "px";
 
-	ba1positonleft = randomrange(400,1000);
-	ba1positontop = randomrange(-300,100);
-	ba2positonleft = ba1positonleft + ba1width + randomrange(100,400);
-	ba2positontop = randomrange(-300,100);
+	ba1positonleft = randomrange(dw/3,dw*1.2);
+	ba1positontop = randomrange(-dh/4,dh/10);
+	ba2positonleft = ba1positonleft + ba1width + randomrange(dw/10,dw/3);
+	ba2positontop = randomrange(-dh/4,dh/10);
 
-	ba3positonleft = randomrange(-300,100);
-	ba3positontop = randomrange(-300,100);
-	ba4positonleft = ba3positonleft + ba3width + randomrange(100,400);
-	ba4positontop = randomrange(-300,100);
+	ba3positonleft = randomrange(-dw/4,dw/10);
+	ba3positontop = randomrange(-dh/4,dh/10);
+	ba4positonleft = ba3positonleft + ba3width + randomrange(dw/10,dw/3);
+	ba4positontop = randomrange(-dh/4,dh/10);
 
 	ba1.style.left=ba1positonleft + "px";
 	ba1.style.top=ba1positontop + "px";
